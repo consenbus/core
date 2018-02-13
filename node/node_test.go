@@ -5,10 +5,10 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/frankh/crypto/ed25519"
-	"github.com/frankh/nano/blocks"
-	"github.com/frankh/nano/store"
-	"github.com/frankh/nano/types"
+	"github.com/consenbus/core/ed25519"
+	"github.com/consenbus/core/blocks"
+	"github.com/consenbus/core/store"
+	"github.com/consenbus/core/types"
 )
 
 var publishSend, _ = hex.DecodeString("5243050501030002B6460102018F076CC32FF2F65AD397299C47F8CA2BE784D5DE394D592C22BE8BFFBE91872F1D2A2BCC1CB47FB854D6D31E43C6391EADD5750BB9689E5DF0D6CB0000003D11C83DBCFF748EB4B7F7A3C059DDEEE5C8ECCC8F20DEF3AF3C4F0726F879082ED051D0C62A54CD69C4A66B020369B7033C5B0F77654173AB24D5C7A64CC4FFF0BDB368FCC989E41A656569047627C49A2A6D2FBC")

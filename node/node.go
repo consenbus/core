@@ -8,7 +8,7 @@ import (
 	"log"
 	"net"
 
-	"github.com/frankh/nano/store"
+	"github.com/consenbus/core/store"
 )
 
 var MagicNumber = [2]byte{'R', 'C'}

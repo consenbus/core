@@ -7,12 +7,12 @@ import (
 	"encoding/hex"
 	"errors"
 
-	"github.com/frankh/nano/types"
-	"github.com/frankh/nano/utils"
+	"github.com/consenbus/core/types"
+	"github.com/consenbus/core/utils"
 	"github.com/golang/crypto/blake2b"
 	// We've forked golang's ed25519 implementation
 	// to use blake2b instead of sha3
-	"github.com/frankh/crypto/ed25519"
+	"github.com/consenbus/core/ed25519"
 )
 
 // xrb uses a non-standard base32 character set.

@@ -7,11 +7,11 @@ import (
 	"log"
 	"sync"
 
+	"github.com/consenbus/core/address"
+	"github.com/consenbus/core/blocks"
+	"github.com/consenbus/core/types"
+	"github.com/consenbus/core/uint128"
 	"github.com/dgraph-io/badger"
-	"github.com/frankh/nano/address"
-	"github.com/frankh/nano/blocks"
-	"github.com/frankh/nano/types"
-	"github.com/frankh/nano/uint128"
 )
 
 type Config struct {
