@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/frankh/nano/node"
-	"github.com/frankh/nano/store"
+	"github.com/consenbus/core/node"
+	"github.com/consenbus/core/store"
 )
 
 func main() {
