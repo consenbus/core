@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"log"
 	"net"
+	"time"
 
 	"github.com/consenbus/core/store"
 )
@@ -40,8 +41,9 @@ const (
 )
 
 type Peer struct {
-	IP   net.IP
-	Port uint16
+	IP           net.IP
+	Port         uint16
+	LastReachout *time.Time
 }
 
 type MessageHeader struct {
@@ -72,6 +74,10 @@ type MessageConfirmReq struct {
 type MessagePublish struct {
 	MessageHeader
 	MessageBlock
+}
+
+type Message interface {
+	Write(buf *bytes.Buffer) error
 }
 
 func CreateKeepAlive(peers []Peer) *MessageKeepAlive {
@@ -177,7 +183,7 @@ func (m *MessageKeepAlive) Read(buf *bytes.Buffer) error {
 			return errors.New("Not enough ip bytes")
 		}
 
-		m.Peers = append(m.Peers, Peer{peerIp, binary.LittleEndian.Uint16(peerPort)})
+		m.Peers = append(m.Peers, Peer{peerIp, binary.LittleEndian.Uint16(peerPort), nil})
 	}
 
 	return nil
